@@ -11,3 +11,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 }
+
+
+//todo Goal of project is to make it so that you can press the add button which opens a dialog with "Button Text" "Button Name" "Button URL" and maybe later add in button and text color
