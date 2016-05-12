@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">DCVSGroupChats</string>
+    <string name="acgbuttontext">ACG</string>
+    <string name="defaultbtntext">Chat Button</string>
+    <string name="groupnametitle">Group Name</string>
+    <string name="grouplinktitle">Group Link</string>
+    <string name="errordialogtext">ERROR</string>
 </resources>
