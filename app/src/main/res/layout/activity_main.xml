@@ -10,34 +10,16 @@
     tools:context="org.dcvs.nac.dcvsgroupchats.MainActivity"
     android:background="#fbff00">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/acgbuttontext"
-        android:id="@+id/acgBTN"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:visibility="visible"
-        android:onClick="onACGClick" />
-
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/acgbuttontext"
-        android:id="@+id/checkBox"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:visibility="gone" />
-
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:id="@+id/tableLayout">
 
         <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
             <Button
                 android:layout_width="wrap_content"
@@ -48,7 +30,8 @@
                 android:layout_marginTop="161dp"
                 android:textSize="22sp"
                 android:contentDescription="@string/defaultbtntext"
-                android:visibility="invisible" />
+                android:visibility="invisible"
+                android:onClick="C1OnClick" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -60,7 +43,8 @@
                 android:textSize="22sp"
                 android:contentDescription="@string/defaultbtntext"
                 android:layout_column="24"
-                android:visibility="invisible"/>
+                android:visibility="invisible"
+                android:onClick="C2OnClick" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -72,7 +56,8 @@
                 android:textSize="22sp"
                 android:contentDescription="@string/defaultbtntext"
                 android:layout_column="35"
-                android:visibility="invisible"/>
+                android:visibility="invisible"
+                android:onClick="C3OnClick" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -84,12 +69,13 @@
                 android:textSize="22sp"
                 android:contentDescription="@string/defaultbtntext"
                 android:layout_column="46"
-                android:visibility="invisible"/>
+                android:visibility="invisible"
+                android:onClick="C4OnClick" />
         </TableRow>
 
         <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
             <Button
                 android:text="@string/defaultbtntext"
@@ -99,7 +85,8 @@
                 android:textSize="22sp"
                 android:contentDescription="@string/defaultbtntext"
                 android:layout_column="0"
-                android:visibility="invisible"/>
+                android:visibility="invisible"
+                android:onClick="C5OnClick" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -111,7 +98,8 @@
                 android:textSize="22sp"
                 android:contentDescription="@string/defaultbtntext"
                 android:layout_column="24"
-                android:visibility="invisible"/>
+                android:visibility="invisible"
+                android:onClick="C6OnClick" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -123,7 +111,8 @@
                 android:textSize="22sp"
                 android:contentDescription="@string/defaultbtntext"
                 android:layout_column="35"
-                android:visibility="invisible"/>
+                android:visibility="invisible"
+                android:onClick="C7OnClick" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -135,12 +124,13 @@
                 android:textSize="22sp"
                 android:contentDescription="@string/defaultbtntext"
                 android:layout_column="46"
-                android:visibility="invisible"/>
+                android:visibility="invisible"
+                android:onClick="C8OnClick" />
         </TableRow>
 
         <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
             <Button
                 android:text="@string/defaultbtntext"
@@ -150,7 +140,8 @@
                 android:textSize="22sp"
                 android:contentDescription="@string/defaultbtntext"
                 android:layout_column="0"
-                android:visibility="invisible"/>
+                android:visibility="invisible"
+                android:onClick="C9OnClick" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -162,7 +153,8 @@
                 android:textSize="22sp"
                 android:contentDescription="@string/defaultbtntext"
                 android:layout_column="24"
-                android:visibility="invisible"/>
+                android:visibility="invisible"
+                android:onClick="C10OnClick" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -174,7 +166,8 @@
                 android:textSize="22sp"
                 android:contentDescription="@string/defaultbtntext"
                 android:layout_column="35"
-                android:visibility="invisible"/>
+                android:visibility="invisible"
+                android:onClick="C11OnClick" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -186,9 +179,21 @@
                 android:textSize="22sp"
                 android:contentDescription="@string/defaultbtntext"
                 android:layout_column="46"
-                android:visibility="invisible"/>
+                android:visibility="invisible"
+                android:onClick="C12OnClick" />
         </TableRow>
 
     </TableLayout>
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/acgbuttontext"
+        android:textOff="@string/switchoffacg"
+        android:textOn="@string/switchonacg"
+        android:id="@+id/acgswitch"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:onClick="acgonclick" />
 
 </RelativeLayout>

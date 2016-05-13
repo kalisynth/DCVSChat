@@ -3,102 +3,205 @@ package org.dcvs.nac.dcvsgroupchats;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputType;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
+import com.google.android.gms.appindexing.Action;
+import com.google.android.gms.appindexing.AppIndex;
+import com.google.android.gms.common.api.GoogleApiClient;
+
+import java.net.URI;
 import java.util.ArrayList;
+
+import static android.view.View.VISIBLE;
 
 public class MainActivity extends AppCompatActivity {
 
     String groupnametxt = "";
     String grouplinktxt = "";
 
+    Boolean acgcheckbox = false;
+
+    //default checks
+    Boolean c1default = false;
+    Boolean c2default = false;
+    Boolean c3default = false;
+    Boolean c4default = false;
+    Boolean c5default = false;
+    Boolean c6default = false;
+    Boolean c7default = false;
+    Boolean c8default = false;
+    Boolean c9default = false;
+    Boolean c10default = false;
+    Boolean c11default = false;
+    Boolean c12default = false;
+    /**
+     * ATTENTION: This was auto-generated to implement the App Indexing API.
+     * See https://g.co/AppIndexing/AndroidStudio for more information.
+     */
+    private GoogleApiClient client;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
-    public void onACGClick(View V){
-        groupdialog();
-        Boolean defaultbtn;
-        /*ArrayList<String> btnlist = new ArrayList<String>(12);
+    public void C1OnClick(View v) {
+        //create object of shared preferences
+        SharedPreferences sharedPrefs=getSharedPreferences("c1", 0);
+        //get editor
+        SharedPreferences.Editor editor=sharedPrefs.edit();
+        //put value
+        editor.putString("btnname", strName);
+        editor.putString("btnlink", strLink);
+        //commit edit
+        editor.apply();
 
-        btnlist.add(1, "Chat Button");
-        btnlist.add(2, "Chat Button");
-        btnlist.add(3, "Chat Button");
-        btnlist.add(4, "Chat Button");
-        btnlist.add(5, "Chat Button");
-        btnlist.add(6, "Chat Button");
-        btnlist.add(7, "Chat Button");
-        btnlist.add(8, "Chat Button");
-        btnlist.add(9, "Chat Button");
-        btnlist.add(10, "Chat Button");
-        btnlist.add(11, "Chat Button");
-        btnlist.add(12, "Chat Button");*/
-
-        Button chat1btn = (Button)findViewById(R.id.chatbtn1);
-        chat1btn.defaultbtn = true;
-        Button chat2btn = (Button)findViewById(R.id.chatbtn2);
-        Button chat3btn = (Button)findViewById(R.id.chatbtn3);
-        Button chat4btn = (Button)findViewById(R.id.chatbtn4);
-        Button chat5btn = (Button)findViewById(R.id.chatbtn5);
-        Button chat6btn = (Button)findViewById(R.id.chatbtn6);
-        Button chat7btn = (Button)findViewById(R.id.chatbtn7);
-        Button chat8btn = (Button)findViewById(R.id.chatbtn8);
-        Button chat9btn = (Button)findViewById(R.id.chatbtn9);
-        Button chat10btn = (Button)findViewById(R.id.chatbtn10);
-        Button chat11btn = (Button)findViewById(R.id.chatbtn11);
-        Button chat12btn = (Button)findViewById(R.id.chatbtn12);
-
-        if (chat1btn.getTag()) {
-            chat1btn.setText(groupnametxt);
-            chat1btn.setVisibility(View.VISIBLE);
-        } else if(chat2btn.getText().toString().equals(R.string.defaultbtntext)) {
-            chat2btn.setText(groupnametxt);
-            chat2btn.setVisibility(View.VISIBLE);
-        } else if(chat3btn.getText().toString().equals(R.string.defaultbtntext)) {
-            chat3btn.setText(groupnametxt);
-            chat3btn.setVisibility(View.VISIBLE);
-        } else if(chat4btn.getText().toString().equals(R.string.defaultbtntext)) {
-            chat4btn.setText(groupnametxt);
-            chat4btn.setVisibility(View.VISIBLE);
-        } else if(chat5btn.getText().toString().equals(R.string.defaultbtntext)) {
-            chat5btn.setText(groupnametxt);
-            chat5btn.setVisibility(View.VISIBLE);
-        } else if(chat6btn.getText().toString().equals(R.string.defaultbtntext)) {
-            chat6btn.setText(groupnametxt);
-            chat6btn.setVisibility(View.VISIBLE);
-        } else if(chat7btn.getText().toString().equals(R.string.defaultbtntext)) {
-            chat7btn.setText(groupnametxt);
-            chat7btn.setVisibility(View.VISIBLE);
-        } else if(chat8btn.getText().toString().equals(R.string.defaultbtntext)) {
-            chat8btn.setText(groupnametxt);
-            chat8btn.setVisibility(View.VISIBLE);
-        } else if(chat9btn.getText().toString().equals(R.string.defaultbtntext)) {
-            chat9btn.setText(groupnametxt);
-            chat9btn.setVisibility(View.VISIBLE);
-        } else if(chat10btn.getText().toString().equals(R.string.defaultbtntext)) {
-            chat10btn.setText(groupnametxt);
-            chat10btn.setVisibility(View.VISIBLE);
-        } else if(chat11btn.getText().toString().equals(R.string.defaultbtntext)) {
-            chat11btn.setText(groupnametxt);
-            chat11btn.setVisibility(View.VISIBLE);
-        } else if(chat12btn.getText().toString().equals(R.string.defaultbtntext)) {
-            chat12btn.setText(groupnametxt);
-            chat12btn.setVisibility(View.VISIBLE);
+        if (acgcheckbox){
+            groupdialog();
         } else {
-            errordialog();
+
         }
+
     }
 
-    public void errordialog(){
+    public void C2OnClick(View v) {
+        String btntext = "";
+        Uri btnurl = Uri.parse("");
+
+    }
+
+    public void C3OnClick(View v) {
+        String btntext = "";
+        Uri btnurl = Uri.parse("");
+    }
+
+    public void C4OnClick(View v) {
+        String btntext = "";
+        Uri btnurl = Uri.parse("");
+    }
+
+    public void C5OnClick(View v) {
+        String btntext = "";
+        Uri btnurl = Uri.parse("");
+    }
+
+    public void C6OnClick(View v) {
+        String btntext = "";
+        Uri btnurl = Uri.parse("");
+    }
+
+    public void C7OnClick(View v) {
+        String btntext = "";
+        Uri btnurl = Uri.parse("");
+    }
+
+    public void C8OnClick(View v) {
+        String btntext = "";
+        Uri btnurl = Uri.parse("");
+    }
+
+    public void C9OnClick(View v) {
+        String btntext = "";
+        Uri btnurl = Uri.parse("");
+    }
+
+    public void C10OnClick(View v) {
+        String btntext = "";
+        Uri btnurl = Uri.parse("");
+    }
+
+    public void C11OnClick(View v) {
+        String btntext = "";
+        Uri btnurl = Uri.parse("");
+    }
+
+    public void C12OnClick(View v) {
+        String btntext = "";
+        Uri btnurl = Uri.parse("");
+    }
+
+    public void acgonclick(View v) {
+        final View b1 = findViewById(R.id.chatbtn1);
+        final View b2 = findViewById(R.id.chatbtn2);
+        final View b3 = findViewById(R.id.chatbtn3);
+        final View b4 = findViewById(R.id.chatbtn4);
+        final View b5 = findViewById(R.id.chatbtn5);
+        final View b6 = findViewById(R.id.chatbtn6);
+        final View b7 = findViewById(R.id.chatbtn7);
+        final View b8 = findViewById(R.id.chatbtn8);
+        final View b9 = findViewById(R.id.chatbtn9);
+        final View b10 = findViewById(R.id.chatbtn10);
+        final View b11 = findViewById(R.id.chatbtn11);
+        final View b12 = findViewById(R.id.chatbtn12);
+
+        Switch switched = (Switch) findViewById(R.id.acgswitch);
+        assert switched != null;
+        switched.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    acgcheckbox = true;
+                    //switch enabled
+
+                    b1.setVisibility(View.VISIBLE);
+                    b2.setVisibility(View.VISIBLE);
+                    b3.setVisibility(View.VISIBLE);
+                    b4.setVisibility(View.VISIBLE);
+                    b5.setVisibility(View.VISIBLE);
+                    b6.setVisibility(View.VISIBLE);
+                    b7.setVisibility(View.VISIBLE);
+                    b8.setVisibility(View.VISIBLE);
+                    b9.setVisibility(View.VISIBLE);
+                    b10.setVisibility(View.VISIBLE);
+                    b11.setVisibility(View.VISIBLE);
+                    b12.setVisibility(View.VISIBLE);
+
+                    Log.d("ACGCheck","ACGCheck Enabled");
+
+
+                } else {
+                    acgcheckbox = false;
+                    //switch disabled
+                    b1.setVisibility(View.INVISIBLE);
+                    b2.setVisibility(View.INVISIBLE);
+                    b3.setVisibility(View.INVISIBLE);
+                    b4.setVisibility(View.INVISIBLE);
+                    b5.setVisibility(View.INVISIBLE);
+                    b6.setVisibility(View.INVISIBLE);
+                    b7.setVisibility(View.INVISIBLE);
+                    b8.setVisibility(View.INVISIBLE);
+                    b9.setVisibility(View.INVISIBLE);
+                    b10.setVisibility(View.INVISIBLE);
+                    b11.setVisibility(View.INVISIBLE);
+                    b12.setVisibility(View.INVISIBLE);
+
+                    Log.d("ACGCheck","ACGCheck Disabled");
+
+                }
+            }
+        });
+
+    }
+
+
+    public void errordialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("ERROR");
         final TextView errortext = new TextView(this);
@@ -106,7 +209,7 @@ public class MainActivity extends AppCompatActivity {
         builder.setView(errortext);
     }
 
-    public void groupdialog(){
+    public void groupdialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Group Chat Details");
         LinearLayout grouplayout = new LinearLayout(this);
@@ -138,13 +241,53 @@ public class MainActivity extends AppCompatActivity {
                 grouplinktxt = grouplink.getText().toString();
             }
         });
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener(){
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which){
+            public void onClick(DialogInterface dialog, int which) {
                 dialog.cancel();
             }
         });
         builder.show();
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        client.connect();
+        Action viewAction = Action.newAction(
+                Action.TYPE_VIEW, // TODO: choose an action type.
+                "Main Page", // TODO: Define a title for the content shown.
+                // TODO: If you have web page content that matches this app activity's content,
+                // make sure this auto-generated web page URL is correct.
+                // Otherwise, set the URL to null.
+                Uri.parse("http://host/path"),
+                // TODO: Make sure this auto-generated app URL is correct.
+                Uri.parse("android-app://org.dcvs.nac.dcvsgroupchats/http/host/path")
+        );
+        AppIndex.AppIndexApi.start(client, viewAction);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        Action viewAction = Action.newAction(
+                Action.TYPE_VIEW, // TODO: choose an action type.
+                "Main Page", // TODO: Define a title for the content shown.
+                // TODO: If you have web page content that matches this app activity's content,
+                // make sure this auto-generated web page URL is correct.
+                // Otherwise, set the URL to null.
+                Uri.parse("http://host/path"),
+                // TODO: Make sure this auto-generated app URL is correct.
+                Uri.parse("android-app://org.dcvs.nac.dcvsgroupchats/http/host/path")
+        );
+        AppIndex.AppIndexApi.end(client, viewAction);
+        client.disconnect();
     }
 }
 
