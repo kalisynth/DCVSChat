@@ -3,6 +3,7 @@ package org.dcvs.nac.dcvsgroupchats;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
@@ -35,19 +36,32 @@ public class MainActivity extends AppCompatActivity {
 
     Boolean acgcheckbox = false;
 
+    Boolean b1enabled = false;
+    Boolean b2enabled = false;
+    Boolean b3enabled = false;
+    Boolean b4enabled = false;
+    Boolean b5enabled = false;
+    Boolean b6enabled = false;
+    Boolean b7enabled = false;
+    Boolean b8enabled = false;
+    Boolean b9enabled = false;
+    Boolean b10enabled = false;
+    Boolean b11enabled = false;
+    Boolean b12enabled = false;
+
     //default checks
-    Boolean c1default = false;
-    Boolean c2default = false;
-    Boolean c3default = false;
-    Boolean c4default = false;
-    Boolean c5default = false;
-    Boolean c6default = false;
-    Boolean c7default = false;
-    Boolean c8default = false;
-    Boolean c9default = false;
-    Boolean c10default = false;
-    Boolean c11default = false;
-    Boolean c12default = false;
+    Boolean c1default = true;
+    Boolean c2default = true;
+    Boolean c3default = true;
+    Boolean c4default = true;
+    Boolean c5default = true;
+    Boolean c6default = true;
+    Boolean c7default = true;
+    Boolean c8default = true;
+    Boolean c9default = true;
+    Boolean c10default = true;
+    Boolean c11default = true;
+    Boolean c12default = true;
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -64,20 +78,32 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void C1OnClick(View v) {
+        String strName = "";
+        String strLink = "";
+        Boolean c1isdefault = true;
         //create object of shared preferences
         SharedPreferences sharedPrefs=getSharedPreferences("c1", 0);
         //get editor
         SharedPreferences.Editor editor=sharedPrefs.edit();
-        //put value
-        editor.putString("btnname", strName);
-        editor.putString("btnlink", strLink);
-        //commit edit
-        editor.apply();
 
         if (acgcheckbox){
+            b1enabled = true;
             groupdialog();
+            //put value
+            editor.putString("strName", groupnametxt);
+            editor.putString("strLink", grouplinktxt);
+            //commit edit
+            editor.apply();
+            c1default = false;
+            b1enabled = false;
         } else {
-
+            String btnlinkc1 = sharedPrefs.getString("btnlink", "http://www.google.com");
+            Uri btnurl = Uri.parse(btnlinkc1);
+            Intent openURL = new Intent();
+            openURL.setAction(Intent.ACTION_VIEW);
+            openURL.addCategory(Intent.CATEGORY_BROWSABLE);
+            openURL.setData(btnurl);
+            startActivity(openURL);
         }
 
     }
@@ -159,13 +185,25 @@ public class MainActivity extends AppCompatActivity {
                 if (isChecked) {
                     acgcheckbox = true;
                     //switch enabled
-
-                    b1.setVisibility(View.VISIBLE);
-                    b2.setVisibility(View.VISIBLE);
-                    b3.setVisibility(View.VISIBLE);
-                    b4.setVisibility(View.VISIBLE);
-                    b5.setVisibility(View.VISIBLE);
-                    b6.setVisibility(View.VISIBLE);
+                    if (c1default = false) {
+                        b1.setVisibility(View.VISIBLE);
+                    }
+                    if (c2default = false) {
+                        b2.setVisibility(View.VISIBLE);
+                    }
+                    if (c3default = false) {
+                        b3.setVisibility(View.VISIBLE);
+                    }
+                    if (c4default = false) {
+                        b4.setVisibility(View.VISIBLE);
+                    }
+                    if (c5default = false) {
+                        b5.setVisibility(View.VISIBLE);
+                    }
+                    if (c6default = false) {
+                        b6.setVisibility(View.VISIBLE);
+                    }
+                    if (c7default = false)
                     b7.setVisibility(View.VISIBLE);
                     b8.setVisibility(View.VISIBLE);
                     b9.setVisibility(View.VISIBLE);
