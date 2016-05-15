@@ -334,3 +334,5 @@ public class MainActivity extends AppCompatActivity {
 // chat button array on button touch
 // check button array one at time for if the buttons are still default, when it finds a default button a dialog will pop up asking for "Group Name" "Group Link" then the button will be changed to Button Text: "Group Name" and Button Link: "Group Link" and set button to visible.
 // add a default boolean ie isdefault = false/true
+
+// create pref file for visibility check
